@@ -18,7 +18,6 @@ class Solution {
             } else {
                 letterLogs.append(log)
             }
-            
         }
         
         letterLogs.sort { (letterLog1, letterLog2) -> Bool in
@@ -30,7 +29,12 @@ class Solution {
             
             let str_one = arrayOne.dropFirst().joined(separator: " ")
             let str_two = arrayTwo.dropFirst().joined(separator: " ")
-            return str_one<str_two
+            
+            if str_one == str_two {
+                return arrayOne.first! < arrayTwo.first!
+            } else {
+                return str_one<str_two
+            }
         }
         
         return letterLogs + digitLogs
